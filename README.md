@@ -52,7 +52,13 @@ Please refer to the links and config files provided in this repository for more 
    ```bash
    mfa align /path/to/your/audio_and_lab_files/ /path/to/your/dictionary/ /output/path
    ```
+After alignment, we recommend checking the English and Russian `.lab` label files for fine-grained IPA symbols.  
+If such phonetic forms are present, please normalize them to their base phonemes to ensure consistency with the phoneme inventory defined in the lexicon.
 
+Examples:
+- Length mark `[ː]`: `tː → t`
+- Dental diacritic `[̪]`: `d̪ → d`
+- Palatalization mark `[ʲ]`: `tʲ → t`
 6. **Preprocess data for each language:**  
    ```bash
    python3 preprocess.py config/your_language/preprocess.yaml
